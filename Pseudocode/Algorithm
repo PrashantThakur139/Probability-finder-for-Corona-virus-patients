@@ -1,0 +1,27 @@
+Step 1-Firstly we need to fetch the details of the patients whom were tested for the COVID-19 from the clinic .
+Step 2 -Import required package (pandas and numpy)
+       import pandas as pd
+       import numpy as np
+      Pandas stands for panel data .
+It is an open source python package which is used for data manipulation and data analysis.
+It consists of single and multi dimensional data structures  for data manipulation
+      Numpy stands for Numerical python.
+It is also a open source python package consisting of multidimensional array objects and a collection of routines for processing those arrays. Using NumPy, mathematical and logical operations on arrays can be performed.
+Step 3- Next step is to Train and Test the data .
+      Functions and methods used to perform training and testing(.random .permutations function) .iloc method
+def data_split(data,ratio):
+    shuffled = np.random.permutation(len(data))
+    test_set_size = int(len(data) * ratio)
+    test_indices = shuffled [:test_set_size
+    train_indices = shuffled [test_set_size:]
+    return data.iloc[train_indices], data.iloc[test_indices]
+step 4- next we need to import  logistic regression from sklearn.linear_model 
+      from sklearn.linear_model import LogisticRegression
+Logistic Regression is a Machine Learning classification algorithm that is used to predict the probability of a categorical dependent variable. In logistic regression, the dependent variable is a binary variable that contains data coded as 1 (yes, success, etc.) or 0 (no, failure, etc.).
+      fit function
+step 5 - Predict_proba function and fetch symptoms from user.
+       # input features=[TEMP,Bodypain,Age,RunnyNose,DifficultyBreathe]
+       inputFeatures=[98,0,21,0,-1]
+       Probability_of_COVID_infection = clf.predict_proba([inputFeatures])[0][1]
+
+Step 6 - Gives you probability and percentage of infection in a particular person.
